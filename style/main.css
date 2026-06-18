@@ -1,0 +1,256 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f5f7fa;
+    color:#333;
+    line-height:1.6;
+}
+
+.skip-link{
+    position:absolute;
+    left:-9999px;
+}
+
+.skip-link:focus{
+    left:10px;
+    top:10px;
+    background:white;
+    padding:10px;
+    z-index:1000;
+}
+
+header{
+    background:#2563eb;
+    color:white;
+    padding:1rem;
+}
+
+header h1{
+    text-align:center;
+}
+
+#menuBtn{
+    display:none;
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    gap:1rem;
+    list-style:none;
+    margin-top:1rem;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+main{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+section{
+    background:white;
+    margin:1rem 0;
+    padding:1rem;
+    border-radius:10px;
+    box-shadow:0 2px 6px rgba(0,0,0,.1);
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:1rem;
+}
+
+.card{
+    background:#eef2ff;
+    padding:1rem;
+    border-radius:10px;
+    text-align:center;
+    transition:transform .3s ease;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:.6rem;
+}
+
+input,
+select,
+button{
+    padding:.8rem;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+button:hover{
+    opacity:.9;
+}
+
+small{
+    color:red;
+    min-height:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:1rem;
+}
+
+th,
+td{
+    border:1px solid #ddd;
+    padding:.8rem;
+}
+
+th{
+    background:#2563eb;
+    color:white;
+}
+
+.sortButtons{
+    display:flex;
+    gap:10px;
+    margin:1rem 0;
+}
+
+#trendChart{
+    margin-top:1rem;
+}
+
+.chart-bar{
+    background:#2563eb;
+    color:white;
+    margin-bottom:5px;
+    padding:5px;
+    border-radius:4px;
+    animation:grow .5s ease;
+}
+
+@keyframes grow{
+    from{
+        width:0;
+    }
+
+    to{
+        width:100%;
+    }
+}
+
+#liveMessage{
+    margin-top:1rem;
+    padding:1rem;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+.error{
+    border:2px solid red;
+}
+
+mark{
+    background:yellow;
+}
+
+footer{
+    text-align:center;
+    padding:1rem;
+}
+
+:focus{
+    outline:3px solid orange;
+}
+
+/* Mobile */
+
+@media (max-width:767px){
+
+    #menuBtn{
+        display:block;
+        margin:10px auto;
+    }
+
+    #navMenu{
+        display:none;
+        flex-direction:column;
+        text-align:center;
+    }
+
+    #navMenu.show{
+        display:flex;
+    }
+
+    table,
+    thead,
+    tbody,
+    tr,
+    td{
+        display:block;
+        width:100%;
+    }
+
+    thead{
+        display:none;
+    }
+
+    tr{
+        margin-bottom:1rem;
+        border:1px solid #ddd;
+    }
+
+    td{
+        text-align:right;
+        position:relative;
+        padding-left:50%;
+    }
+
+    td::before{
+        content:attr(data-label);
+        position:absolute;
+        left:10px;
+        font-weight:bold;
+    }
+}
+
+/* Tablet */
+
+@media (min-width:768px){
+
+    .cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* Desktop */
+
+@media (min-width:1024px){
+
+    .cards{
+        grid-template-columns:repeat(4,1fr);
+    }
+
+}
