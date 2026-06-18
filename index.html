@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Finance Tracker</title>
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+ <!---->
+    <!--Top section containing the header, navigation bars, and skip link to the main-content which is the dashboard-->
+<div id="top-section">
+
+<a href="#main-content" class="skip-link">Skip to Content</a>
+
+<header>
+    <h1>Student Finance Tracker</h1>
+
+    <button id="menuBtn">☰</button>
+
+    <nav>
+        <ul id="navMenu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#transactions">Transactions</a></li>
+            <li><a href="#settings">Settings</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="main-content">
+
+<section id="about">
+    <h2>About</h2>
+    <p>
+        Student Finance Tracker helps students track expenses,
+        budgets and spending habits.
+    </p>
+
+    <p>GitHub: <a href="https://github.com/mmuuse-dot" target="_blank">@mmuuse-dot</a> </p>
+    <p>Contact: <a href="mailto: m.muuse@example.com">m.muuse@alustudent.com</a></p>
+</section>
+
+<section id="dashboard">
+    <h2>Dashboard</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Total Transactions</h3>
+            <p id="totalTransactions">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Spending</h3>
+            <p id="totalSpending">$0.00</p>
+        </div>
+
+        <div class="card">
+            <h3>Top Category</h3>
+            <p id="topCategory">None</p>
+        </div>
+
+        <div class="card">
+            <h3>Budget Status</h3>
+            <p id="budgetStatus">No Budget Set</p>
+        </div>
+
+    </div>
+
+    <h3>7-Day Spending Trend</h3>
+    <div id="trendChart"></div>
+</section>
+
+<section id="transactions">
+
+    <h2>Add Transaction</h2>
+
+    <form id="transactionForm">
+
+        <label>Description</label>
+        <input type="text" id="description">
+        <small id="descriptionError"></small>
+
+        <label>Amount</label>
+        <input type="text" id="amount">
+        <small id="amountError"></small>
+
+        <label>Category</label>
+
+        <select id="category">
+            <option>Food</option>
+            <option>Books</option>
+            <option>Transport</option>
+            <option>Entertainment</option>
+            <option>Fees</option>
+            <option>Other</option>
+        </select>
+
+        <small id="categoryError"></small>
+
+        <label>Date</label>
+        <input type="date" id="date">
+
+        <small id="dateError"></small>
+
+        <button type="submit">
+            Save Transaction
+        </button>
+
+    </form>
+
+    <hr>
+
+    <h2>Records</h2>
+
+    <input
+        type="text"
+        id="regexSearch"
+        placeholder="Regex Search"
+    >
+
+    <label>
+        <input type="checkbox" id="ignoreCase">
+        Ignore Case
+    </label>
+
+    <div class="sortButtons">
+        <button id="sortDescription">
+            Sort Description
+        </button>
+
+        <button id="sortAmount">
+            Sort Amount
+        </button>
+
+        <button id="sortDate">
+            Sort Date
+        </button>
+    </div>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody id="tableBody"></tbody>
+
+    </table>
+
+</section>
+
+<section id="settings">
+
+    <h2>Settings</h2>
+
+    <label>Budget Cap</label>
+    <input type="number" id="budgetCap">
+
+    <button id="saveBudget">
+        Save Budget
+    </button>
+
+    <hr>
+
+    <h3>Currency Settings</h3>
+
+   <select id="currency">
+    <option value="USD">USD</option>
+    <option value="EUR">EUR</option>
+    <option value="GBP">GBP</option>
+</select>
+
+<label>GBP Rate</label>
+<input type="number" id="gbpRate" value="0.87">
+    <button id="saveRates">
+        Save Rates
+    </button>
+
+    <hr>
+
+    <button id="exportJson">
+        Export JSON
+    </button>
+
+    <input
+        type="file"
+        id="importJson"
+        accept=".json"
+    >
+
+</section>
+
+<div id="liveMessage"
+     aria-live="polite"
+     role="status">
+</div>
+
+</main>
+
+<footer>
+    <p>Student Finance Tracker © 2026</p>
+</footer>
+
+<script type="module" src="./main.js"></script>
+
+</body>
+</html>
