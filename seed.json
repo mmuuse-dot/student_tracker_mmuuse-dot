@@ -1,0 +1,92 @@
+[
+  {
+    "id":"txn_001",
+    "description":"Lunch at cafeteria",
+    "amount":12.50,
+    "category":"Food",
+    "date":"2026-06-01",
+    "createdAt":"2026-06-01T10:00:00Z",
+    "updatedAt":"2026-06-01T10:00:00Z"
+  },
+  {
+    "id":"txn_002",
+    "description":"Bus fare",
+    "amount":2.00,
+    "category":"Transport",
+    "date":"2026-06-02",
+    "createdAt":"2026-06-02T10:00:00Z",
+    "updatedAt":"2026-06-02T10:00:00Z"
+  },
+  {
+    "id":"txn_003",
+    "description":"Programming Book",
+    "amount":45.00,
+    "category":"Books",
+    "date":"2026-06-03",
+    "createdAt":"2026-06-03T10:00:00Z",
+    "updatedAt":"2026-06-03T10:00:00Z"
+  },
+  {
+    "id":"txn_004",
+    "description":"Coffee",
+    "amount":3.50,
+    "category":"Food",
+    "date":"2026-06-04",
+    "createdAt":"2026-06-04T10:00:00Z",
+    "updatedAt":"2026-06-04T10:00:00Z"
+  },
+  {
+    "id":"txn_005",
+    "description":"Movie Ticket",
+    "amount":15.00,
+    "category":"Entertainment",
+    "date":"2026-06-05",
+    "createdAt":"2026-06-05T10:00:00Z",
+    "updatedAt":"2026-06-05T10:00:00Z"
+  },
+  {
+    "id":"txn_006",
+    "description":"Exam Fee",
+    "amount":100.00,
+    "category":"Fees",
+    "date":"2026-06-06",
+    "createdAt":"2026-06-06T10:00:00Z",
+    "updatedAt":"2026-06-06T10:00:00Z"
+  },
+  {
+    "id":"txn_007",
+    "description":"Notebook",
+    "amount":5.00,
+    "category":"Books",
+    "date":"2026-06-07",
+    "createdAt":"2026-06-07T10:00:00Z",
+    "updatedAt":"2026-06-07T10:00:00Z"
+  },
+  {
+    "id":"txn_008",
+    "description":"Taxi",
+    "amount":8.00,
+    "category":"Transport",
+    "date":"2026-06-08",
+    "createdAt":"2026-06-08T10:00:00Z",
+    "updatedAt":"2026-06-08T10:00:00Z"
+  },
+  {
+    "id":"txn_009",
+    "description":"Tea",
+    "amount":1.50,
+    "category":"Food",
+    "date":"2026-06-09",
+    "createdAt":"2026-06-09T10:00:00Z",
+    "updatedAt":"2026-06-09T10:00:00Z"
+  },
+  {
+    "id":"txn_010",
+    "description":"Online Course",
+    "amount":75.00,
+    "category":"Other",
+    "date":"2026-06-10",
+    "createdAt":"2026-06-10T10:00:00Z",
+    "updatedAt":"2026-06-10T10:00:00Z"
+  }
+]
