@@ -1,73 +1,134 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Regex Tests</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Validation Tests</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .pass {
+            color: green;
+            font-weight: bold;
+        }
+
+        .fail {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
-<h1>Regex Validation Tests</h1>
+    <h1>Regex Validation Tests</h1>
 
-<div id="results"></div>
+    <div id="results"></div>
 
-<script type="module">
+    <script type="module">
 
-import { patterns } from "./validators.js";
+    import { patterns } from "./validators.js";
 
-const tests = [
+    const tests = [
 
-{
-    name:"Valid Amount",
-    regex:patterns.amount,
-    value:"12.50",
-    expected:true
-},
+        {
+            name: "Valid Amount",
+            regex: patterns.amount,
+            value: "12.50",
+            expected: true
+        },
 
-{
-    name:"Invalid Amount",
-    regex:patterns.amount,
-    value:"abc",
-    expected:false
-},
+        {
+            name: "Invalid Amount",
+            regex: patterns.amount,
+            value: "abc",
+            expected: false
+        },
 
-{
-    name:"Valid Date",
-    regex:patterns.date,
-    value:"2026-06-19",
-    expected:true
-},
+        {
+            name: "Valid Date",
+            regex: patterns.date,
+            value: "2026-06-19",
+            expected: true
+        },
 
-{
-    name:"Invalid Date",
-    regex:patterns.date,
-    value:"19/06/2026",
-    expected:false
-}
+        {
+            name: "Invalid Date",
+            regex: patterns.date,
+            value: "19/06/2026",
+            expected: false
+        },
 
-];
+        {
+            name: "Valid Category",
+            regex: patterns.category,
+            value: "Food",
+            expected: true
+        },
 
-const results =
-document.getElementById("results");
+        {
+            name: "Invalid Category",
+            regex: patterns.category,
+            value: "Food123",
+            expected: false
+        },
 
-tests.forEach(test=>{
+        {
+            name: "Valid Description",
+            regex: patterns.description,
+            value: "Lunch",
+            expected: true
+        },
 
-const actual =
-test.regex.test(test.value);
+        {
+            name: "Invalid Description",
+            regex: patterns.description,
+            value: " lunch ",
+            expected: false
+        },
 
-const p =
-document.createElement("p");
+        {
+            name: "Guaranteed Fail Test",
+            regex: patterns.amount,
+            value: "123",
+            expected: false
+        }
 
-p.textContent =
-`${test.name}: ${
-actual === test.expected
-? "PASS"
-: "FAIL"
-}`;
+    ];
 
-results.appendChild(p);
+    const results = document.getElementById("results");
 
-});
+    tests.forEach(test => {
 
-</script>
+        const actual = test.regex.test(test.value);
+
+        console.log(
+            test.name,
+            "Actual:", actual,
+            "Expected:", test.expected
+        );
+
+        const passed = actual === test.expected;
+
+        const p = document.createElement("p");
+
+        p.className = passed ? "pass" : "fail";
+
+        p.textContent =
+            `${test.name}
+            | Value: "${test.value}"
+            | Actual: ${actual}
+            | Expected: ${test.expected}
+            | ${passed ? "PASS" : "FAIL"}`;
+
+        results.appendChild(p);
+
+    });
+
+    </script>
 
 </body>
 </html>
