@@ -5,8 +5,9 @@ A web-based application for students to track their expenses, manage budgets, an
 
 
 Live website: http://127.0.0.1:5500/index.html
-Demo Video Link: 
----
+Demo Video Link: https://www.loom.com/share/faba81897cef426fb129d4cd3c8e09ea
+---     
+
 
 ## 🎯 Chosen Theme
 
