@@ -165,10 +165,15 @@ You can add tests inside `tests.js` using the same pattern as existing ones.
 
 
 ├─ tests.html
+
+
 ├─ seed.json
 
 
 ├─ wireframe.png
+
+
+
 └─ README.md
 
                                                                                   AUTHOR
